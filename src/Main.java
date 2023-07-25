@@ -1,4 +1,6 @@
 import br.com.marcus.skynet.calculos.CalculadoraDeTempo;
+import br.com.marcus.skynet.calculos.FiltroRecomendacao;
+import br.com.marcus.skynet.modelos.Episodio;
 import br.com.marcus.skynet.modelos.Film;
 import br.com.marcus.skynet.modelos.Serie;
 
@@ -40,7 +42,14 @@ public class Main {
         calculadora.inclui(meuFilme);
         calculadora.inclui(lost);
         System.out.println(calculadora.getTempoTotal());
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(meuFilme);
+
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie(lost);
+        episodio.setTotalDeVisualizacoes(300);
+        filtro.filtra(episodio);
     }
-
-
 }
