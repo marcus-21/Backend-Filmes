@@ -1,3 +1,4 @@
+import br.com.marcus.skynet.calculos.CalculadoraDeTempo;
 import br.com.marcus.skynet.modelos.Film;
 import br.com.marcus.skynet.modelos.Serie;
 
@@ -33,6 +34,12 @@ public class Main {
         lost.setEpPorTemporada(7);
         lost.setMinutosPorEp(50);
         System.out.println("Duração para maratonar: " + lost.getDuracaoEmMinutos());
+
+
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        calculadora.inclui(meuFilme);
+        calculadora.inclui(lost);
+        System.out.println(calculadora.getTempoTotal());
     }
 
 
